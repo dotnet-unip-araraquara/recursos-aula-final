@@ -1,0 +1,31 @@
+# .gitignore — AULA FINAL — NOVO
+# Tudo o que está aqui o Git NÃO envia para o GitHub.
+# Regra: só vai para o repositório o que é CÓDIGO-FONTE. O que é gerado ou é segredo fica fora.
+
+# Saída da compilação do .NET (gerada de novo a cada dotnet build)
+bin/
+obj/
+
+# Banco SQLite local: tem os HASHES DAS SENHAS dos usuários.
+# O banco do servidor é criado pela própria API (migrations + seed).
+*.db
+*.db-shm
+*.db-wal
+
+# Pacotes do npm (gerados de novo pelo npm install, a partir do package-lock.json)
+node_modules/
+
+# React publicado (gerado pelo npm run build e, no deploy, copiado para a wwwroot da API)
+dist/
+RecursosApi/wwwroot/
+
+# Arquivos do Visual Studio / VS Code e de cada máquina
+.vs/
+.vscode/
+*.user
+
+# Variáveis de ambiente locais (segredos)
+.env
+
+# Observação: o User Secrets (Jwt:Chave, SeedSenhas) já fica FORA da pasta do projeto,
+# no perfil do usuário do Windows — por isso nunca chega ao repositório.
